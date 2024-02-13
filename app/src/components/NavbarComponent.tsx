@@ -1,21 +1,23 @@
 "use client";
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React from 'react';
 
-const NavbarComponent: React.FC = () => (
-
-    <div className='flex items-center justify-between bg-blue-500 px-5'>
-        <div>
-            <h1 className='text-blue-200 px-3 hover:text-white'>Random Quotes</h1>
+const NavbarComponent: React.FC = () => {
+    const pathname = usePathname()
+    return (
+        <div className='flex items-center justify-between bg-blue-500 px-5'>
+            <Link className='text-blue-200 px-3 hover:text-white' href='/list-quote'>Random Quotes </Link>
+            <div className='items-center py-4'>
+                <ul className='flex flex-row'>
+                    <li><Link className={`link ${pathname === '/list-quote' ? 'text-white' : 'text-blue-200'} no-underline px-3 hover:text-white`} href='/list-quote'>Quotes </Link></li>
+                    <li><Link className={`link ${pathname === '/random-quote' ? 'text-white' : 'text-blue-200'} no-underline px-3 hover:text-white`} href='/random-quote'>Random Quotes</Link></li>
+                    <li><Link className={`link ${pathname === '/favourite' ? 'text-white' : 'text-blue-200'} no-underline px-3 hover:text-white`} href='/favourite'>Favourite</Link></li>
+                </ul>
+            </div>
+            <Link className='text-blue-200 px-3 hover:text-white' href=''>Logout</Link>
         </div>
-        <div className='flex items-center py-4'>
-            <a className='text-blue-200 px-3 hover:text-white' href=''>Quotes</a>
-            <a className='text-blue-200 px-3 hover:text-white' href=''>Random Quotes</a>
-            <a className='text-blue-200 px-3 hover:text-white' href=''>Favourite</a>
-        </div>
-        <div>
-            <a className='text-blue-200 px-3 hover:text-white' href=''>Login</a>
-        </div>
-    </div>
-);
+    )
+};
 
 export default NavbarComponent;

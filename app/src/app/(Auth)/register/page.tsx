@@ -13,12 +13,10 @@ const handleRegister = async (data: FieldNamesType) => {
     },
     body: JSON.stringify(data)
   })
+  
   if (response.status == 200) {
     return redirect('/login');
-  }
-
-  console.log(response);
-  
+  }  
 
 };
 const Register = () => (

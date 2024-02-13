@@ -16,8 +16,6 @@ type Props = {
 
 const FormComponent = ({ onSubmit }: Props) => {
   const pathname = usePathname()
-  console.log(pathname);
-
   return (
     <div className='flex flex-col justify-center p-10 border-2 rounded-xl w-96 m-auto mt-20'>
       <h1 className='text-xl font-bold mb-5'>{pathname == '/login' ? 'Login' : 'Register'}</h1>
@@ -47,7 +45,6 @@ const FormComponent = ({ onSubmit }: Props) => {
         <Button htmlType="submit" style={{ width: 300 }}>
           {pathname == '/login' ? 'Login' : 'Register'}
         </Button>
-
       </Form>
     </div>
   )
