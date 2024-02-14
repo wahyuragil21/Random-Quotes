@@ -1,31 +1,11 @@
 "use client";
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Card } from 'antd';
 import { HeartFilled, ShareAltOutlined } from '@ant-design/icons';
 import SkeletonComponent from './SkeletonComponent';
 
-const CardComponent = () => {
-  const [quotes, setQuotes] = React.useState<any>([])
-  const fetchData = async () => {
-    try {
-      const response = await fetch('https://animechan.xyz/api/quotes')
-      const data = await response.json()
-      if (response.status == 200) {
-        setQuotes(data)
-      }
-    } catch (error) {
-      console.log(error);
-
-    }
-  }
-
-  useEffect(() => {
-    fetchData()
-  }, [])
-
-  // console.log(quotes);
-
-
+const CardComponent = ({ quotes }: { quotes: any[] }) => {
+ 
   return (
     <>
       {quotes.length == 0 ?
@@ -42,7 +22,7 @@ const CardComponent = () => {
             <div className='w-1/2 text-center justify-center pt-5 pr-2 pl-2' key={index}>
               <Card
                 hoverable
-                className='bg-slate-100' >
+                className='bg-blue-100' >
                 <p>Anime</p>
                 <p className='font-bold mb-5'>"{quote.anime}"</p>
                 <p>"{quote.quote}"</p>

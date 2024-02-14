@@ -6,7 +6,7 @@ import React from 'react';
 const NavbarComponent: React.FC = () => {
     const pathname = usePathname()
     return (
-        <div className='flex items-center justify-between bg-blue-500 px-5'>
+        <div className='flex items-center justify-between bg-blue-500 px-5 sticky top-0 z-50'>
             <Link className='text-blue-200 px-3 hover:text-white' href='/list-quote'>Random Quotes </Link>
             <div className='items-center py-4'>
                 <ul className='flex flex-row'>
