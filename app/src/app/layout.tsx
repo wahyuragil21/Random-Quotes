@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { CookiesProvider } from 'next-client-cookies/server';
+
 
 export const metadata: Metadata = {
   title: "Random Quotes",
@@ -14,7 +16,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+        <CookiesProvider>
         {children}
+        </CookiesProvider>
       </body>
     </html>
   );

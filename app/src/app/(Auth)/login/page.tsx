@@ -6,7 +6,7 @@ import React from 'react';
 
 
 const handleLogin = async (data: FieldNamesType) => {
-  "use server";
+  'use server';
 
     const response = await fetch('https://reqres.in/api/login', {
       cache: 'no-store',

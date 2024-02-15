@@ -8,11 +8,11 @@ import Link from 'next/link';
 const Home = () => (
   <>
     <div className='flex flex-col items-center justify-center pt-20'>
-      <h1 className='text-3xl font-bold'>Welcome to Random Anime Quotes</h1>
-      <p>Where wisdom meets beauty in every word! Get inspired by captivating quotes from your favorite anime.</p>
+      <h1 className='font-bold sm:text-xl md:text-2xl lg:text-3xl'>Welcome to Random Anime Quotes</h1>
+      <p className='hidden sm:block'>Where wisdom meets beauty in every word! Get inspired by captivating quotes from your favorite anime.</p>
       <p className='text-center font-semibold'>Start exploring now</p>
     </div>
-    <div className='flex justify-center pt-5'>
+    <div className='flex flex-col items-center justify-center md:flex-row lg:flex-row'>
       <Card
         hoverable
         style={{ width: 240, marginRight: '10px' }}
@@ -26,7 +26,7 @@ const Home = () => (
           </Link>
         </Flex>
       </Card>
-
+      <h1 className='lg:hidden md:hidden'>Dont have an account? Register here</h1>
       <Card
         hoverable
         style={{ width: 240, marginLeft: '10px' }}

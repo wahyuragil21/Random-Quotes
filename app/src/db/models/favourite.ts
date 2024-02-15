@@ -4,8 +4,11 @@ import { getCollection } from "../config/mongoDb"
 
 export type Favourite = {
     _id: ObjectId
-    userId: ObjectId
-    quoteId: ObjectId
+    userId: string
+    quoteId: string
+    anime: string
+    character: string
+    quote: string
     createdAt: Date
     updatedAt: Date
 }
@@ -14,13 +17,12 @@ export type Favourite = {
 class FavouriteModel {
 
     static collection() {
-        return getCollection('wishlists')
+        return getCollection('favourites')
     }
-    static async create(payload: {userId: string, quoteId: string}) {
+    static async create(quote : object) {
         try {
             const newFavourite = {
-                userId: new ObjectId(payload.userId),
-                quoteId: new ObjectId(payload.quoteId),
+                ...quote,
                 createdAt: new Date(),
                 updatedAt: new Date()
             }
@@ -33,10 +35,19 @@ class FavouriteModel {
             console.log(error);
         }
     }  
-    
-    static async delete(quoteId : string){
+
+    static async findWishlist({userId} : {userId : string}){
         try {
-            return await this.collection().deleteOne({quoteId: new ObjectId(quoteId)})
+            return await this.collection().find({userId}).toArray()
+        }catch(error){
+            console.log(error);
+            
+        }
+    }
+    
+    static async delete(id : string){
+        try {
+            return await this.collection().deleteOne({_id: new ObjectId(id)})
         } catch (error) {
             console.log(error);
         }

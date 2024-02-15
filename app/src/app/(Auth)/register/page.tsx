@@ -5,7 +5,7 @@ import React from 'react';
 
 
 const handleRegister = async (data: FieldNamesType) => {
-  "use server";
+  'use server';
   const response = await fetch('https://reqres.in/api/login', {
     method: 'POST',
     headers: {

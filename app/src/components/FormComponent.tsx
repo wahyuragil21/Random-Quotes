@@ -1,6 +1,6 @@
 "use client";
 import React from 'react';
-import { Button, Form, Input } from 'antd';
+import { Button, Card, Form, Input } from 'antd';
 import { FieldNamesType } from 'antd/es/cascader';
 import { usePathname } from 'next/navigation';
 
@@ -17,8 +17,9 @@ type Props = {
 const FormComponent = ({ onSubmit }: Props) => {
   const pathname = usePathname()
   return (
-    <div className='flex flex-col justify-center p-10 border-2 rounded-xl w-96 m-auto mt-20'>
-      <h1 className='text-xl font-bold mb-5'>{pathname == '/login' ? 'Login' : 'Register'}</h1>
+    <div className='flex flex-col justify-center p-10 border-2 rounded-xl w-96 m-auto mt-10 mb-10'>
+      <img alt="example" src="https://i.pinimg.com/564x/0c/9b/89/0c9b89b62ba04b4b4740f4ce2da28b54.jpg" />
+      <h1 className='text-md font-semibold mb-5'>{pathname == '/login' ? 'Login With :' : 'Register'}</h1>
       <Form
         name="basic"
         labelCol={{ span: 8 }}
@@ -42,7 +43,7 @@ const FormComponent = ({ onSubmit }: Props) => {
           <Input.Password />
         </Form.Item>
 
-        <Button htmlType="submit" style={{ width: 300 }}>
+        <Button htmlType="submit" className='bg-blue-500 w-[300px] text-white hover:bg-blue-700'>
           {pathname == '/login' ? 'Login' : 'Register'}
         </Button>
       </Form>
