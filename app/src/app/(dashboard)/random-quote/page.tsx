@@ -46,7 +46,7 @@ const RandomQuote = () => {
             <div className='flex justify-center p-5'>
                 <div className='flex flex-col'>
                     <h1 className='text-center font-bold'>Random Quote</h1>
-                    <h1 className='text-center pb-5'>Let's find 1 random quote from your favorite anime or character.</h1>
+                    <h1 className='text-center pb-5'>Lets find 1 random quote from your favorite anime or character.</h1>
                     <Space direction="vertical">
                         <Search
                             placeholder="Input Title or Character Anime"

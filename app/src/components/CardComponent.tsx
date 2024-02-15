@@ -49,10 +49,10 @@ const CardComponent = ({ quote }: { quote: any }) => {
           hoverable
           className='bg-blue-100' >
           <p>Anime</p>
-          <p className='font-bold mb-5'>"{quote.anime}"</p>
+          <p className='font-bold mb-5'>{quote.anime}</p>
           <p>Character</p>
-          <p className='font-bold mb-5'>"{quote.character}"</p>
-          <p>"{quote.quote}"</p>
+          <p className='font-bold mb-5'>{quote.character}</p>
+          <p>{quote.quote}</p>
           <div className='absolute bottom-1 right-2'>
             <HeartFilled className={isFavourite || pathname === '/favourite' ? 'text-red-500' : 'text-black'}
               onClick={pathname === '/favourite' ? () => handleDelete(quote._id) : () => handleFavourite(({
