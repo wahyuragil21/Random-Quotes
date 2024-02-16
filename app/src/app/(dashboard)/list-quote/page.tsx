@@ -63,7 +63,7 @@ const ListQuote = () => {
         (
           quotes.map((quote: any, index: number) => (
             <div className='flex flex-col w-11/12 m-auto pt-5' key={index}>
-              <CardComponent quote={quote} />
+              <CardComponent quote={quote} fetchData={fetchData} />
             </div>
           ))
         )}

@@ -2,7 +2,7 @@
 import React, { useEffect } from 'react';
 import { useCookies } from 'next-client-cookies';
 import CardComponent from '@/components/CardComponent';
-import SkeletonComponent from '@/components/SkeletonComponent';
+import { Card } from 'antd';
 
 const Favourite = () => {
     const [quotes, setQuotes] = React.useState<any>([])
@@ -29,22 +29,22 @@ const Favourite = () => {
     }, [])
     return (
         <>
-            {quotes.length == 0 ?
-                (
-                    Array.from({ length: 6 }).map((_, index) => (
-                        <div className='w-11/12 m-auto text-center justify-center pt-5 pr-2 pl-2' key={index}>
-                            <SkeletonComponent />
-                        </div>
-                    ))
-                )
-                :
-                (
-                    quotes.map((quote: any, index: number) => (
-                        <div className='flex flex-col w-11/12 m-auto pt-5' key={index}>
-                            <CardComponent quote={quote} />
-                        </div>
-                    ))
-                )}
+            <h1 className='text-center font-bold text-xl m-5'>My Favourite Quotes</h1>
+            {quotes.length == 0 ? (
+                <div className='w-11/12 m-auto text-center justify-center pt-5 pr-2 pl-2'>
+                    <Card
+                        hoverable
+                        className='bg-blue-100 h-44' >
+                        <p className='text-center py-14'>You dont have a favorite quote yet, lets find your favorite quote.</p>
+                    </Card>
+                </div>
+            ) : (
+                quotes.map((quote: any, index: number) => (
+                    <div className='flex flex-col w-11/12 m-auto pt-5' key={index}>
+                        <CardComponent quote={quote} fetchData={fetchData} />
+                    </div>
+                ))
+            )}
         </>
     )
 };

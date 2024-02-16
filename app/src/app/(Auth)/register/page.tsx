@@ -6,7 +6,7 @@ import React from 'react';
 
 const handleRegister = async (data: FieldNamesType) => {
   'use server';
-  const response = await fetch('https://reqres.in/api/login', {
+  const response = await fetch('https://reqres.in/api/register', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -16,8 +16,7 @@ const handleRegister = async (data: FieldNamesType) => {
   
   if (response.status == 200) {
     return redirect('/login');
-  }  
-
+  }    
 };
 const Register = () => (
   <>

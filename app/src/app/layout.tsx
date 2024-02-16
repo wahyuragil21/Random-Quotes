@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <CookiesProvider>
-        {children}
+          {children}
         </CookiesProvider>
       </body>
     </html>

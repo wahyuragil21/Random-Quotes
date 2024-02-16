@@ -6,7 +6,7 @@ import { useCookies } from 'next-client-cookies';
 import { usePathname } from 'next/navigation';
 
 
-const CardComponent = ({ quote }: { quote: any }) => {
+const CardComponent = ({ quote, fetchData }: { quote: any, fetchData: Function }) => {
   const [isFavourite, setIsFavourite] = React.useState(false);
   const cookies = useCookies()
   const pathname = usePathname()
@@ -36,8 +36,7 @@ const CardComponent = ({ quote }: { quote: any }) => {
     })
 
     if (response.ok) {
-      console.log("deleted");
-      
+      fetchData();
     }
   }
 

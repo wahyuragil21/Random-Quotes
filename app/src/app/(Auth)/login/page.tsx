@@ -7,7 +7,6 @@ import React from 'react';
 
 const handleLogin = async (data: FieldNamesType) => {
   'use server';
-
     const response = await fetch('https://reqres.in/api/login', {
       cache: 'no-store',
       method: 'POST',
@@ -22,10 +21,6 @@ const handleLogin = async (data: FieldNamesType) => {
     if (response.status == 200) {
       cookies().set('Authorization', token);
       return redirect('/list-quote');
-    }
-
-    if (response.statusText == "Bad Request") {
-      //Toast
     }
 };
 

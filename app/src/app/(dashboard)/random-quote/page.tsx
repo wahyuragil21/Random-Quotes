@@ -2,7 +2,6 @@
 import React, { useEffect } from 'react';
 import type { SearchProps } from 'antd/es/input/Search';
 import { Card, Input, Space } from 'antd';
-import { useCookies } from 'next-client-cookies';
 import CardComponent from '@/components/CardComponent';
 import SkeletonComponent from '@/components/SkeletonComponent';
 
@@ -72,7 +71,7 @@ const RandomQuote = () => {
                         <SkeletonComponent />
                     </div>
                 ) : (
-                    <CardComponent quote={quote} />
+                    <CardComponent quote={quote} fetchData={fetchData} />
                 )
             )}
         </>

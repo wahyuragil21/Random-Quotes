@@ -1,8 +1,9 @@
 "use client";
 import React from 'react';
-import { Button, Card, Form, Input } from 'antd';
+import { Button, Form, Input } from 'antd';
 import { FieldNamesType } from 'antd/es/cascader';
 import { usePathname } from 'next/navigation';
+import { LockOutlined, UserOutlined } from '@ant-design/icons';
 
 type FieldType = {
   email?: string;
@@ -33,14 +34,18 @@ const FormComponent = ({ onSubmit }: Props) => {
           name="email"
           rules={[{ required: true, message: 'Please input your email!' }]}
         >
-          <Input />
+          <Input prefix={<UserOutlined className="site-form-item-icon" />} placeholder="Email" />
         </Form.Item>
 
         <Form.Item<FieldType>
           name="password"
           rules={[{ required: true, message: 'Please input your password!' }]}
         >
-          <Input.Password />
+          <Input
+            prefix={<LockOutlined className="site-form-item-icon" />}
+            type="password"
+            placeholder="Password"
+          />
         </Form.Item>
 
         <Button htmlType="submit" className='bg-blue-500 w-[300px] text-white hover:bg-blue-700'>
