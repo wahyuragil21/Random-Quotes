@@ -12,7 +12,7 @@
 
 ## Demo :
 
-- Link : -
+- Link : https://random-quotes-seven-roan.vercel.app/
 - Login :
 
   - email : eve.holt@reqres.in
@@ -58,7 +58,7 @@ Halaman pada path `/random-quotes` yang akan menampilkan card berisi data dari Q
 
 > Tampilan ketika ada request berdasarkan anime title
 
-![release-3](./assets/Random-By-Title.jpg)
+![release-3](./assets/Random-By-Anime.jpg)
 
 > Tampilan ketika ada request berdasarkan character title
 
@@ -70,6 +70,6 @@ Halaman pada path `/random-quotes` yang akan menampilkan card berisi data dari Q
 
 ![release-4](./assets/Favourite-Page.jpg)
 
-## 5. Logout 
+## 5. Logout
 
 User dapat melakukan logout untuk keluar dari web dan kembali ke halaman landing page.
